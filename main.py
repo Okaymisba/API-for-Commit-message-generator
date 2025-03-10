@@ -17,13 +17,13 @@ async def generate_commit(request: DiffRequest):
     client = genai.Client(api_key="AIzaSyCeXAp1HSnslHNXU1PIkpxLcttyUXHP87s")
     response = client.models.generate_content(
         model="gemini-2.0-flash", contents=f"""Act as a professional Git commit message generator.
-Analyze the following code changes (git diff) and generate a clear, concise, and accurate commit message.
-Use the Conventional Commits format, only if appropriate (e.g., fix, docs, chore, refactor).
-Do not label the change as feat unless it genuinely introduces a new user-facing feature.
-Keep the message short and to the point—no unnecessary details or explanations.
-Avoid including file names unless absolutely necessary.
+Analyze the following code changes (git diff) and generate a concise, clear, and accurate commit message.
+Use the Conventional Commits format only if appropriate (fix, docs, refactor, chore, etc.). Avoid using feat unless the change introduces a meaningful, user-facing feature.
+Include specific details about what was changed (e.g., what functions were modified, what logic was updated, which conditions were altered), but keep the message brief and to the point.
+Avoid listing file names unless essential.
+Do not add explanations, summaries, or unnecessary context. Output only the commit message.
 
-Code changes:
+Here are the code changes:
 {request.diff}
 
 Commit message:"""

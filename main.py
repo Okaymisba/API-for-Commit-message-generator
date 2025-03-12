@@ -19,9 +19,9 @@ async def generate_commit(request: DiffRequest):
         model="gemini-2.0-flash", contents=f"""Act as a professional Git commit message generator.
 Analyze the following code changes (git diff) and generate a concise, clear, and accurate commit message.
 Use the Conventional Commits format only if appropriate (fix, docs, refactor, chore, etc.). Avoid using feat unless the change introduces a meaningful, user-facing feature.
-Include specific details about what was changed (e.g., what functions were modified, what logic was updated, which conditions were altered), but keep the message brief and to the point.
+Include specific details about what was changed (e.g., what functions were modified, what logic was updated, which conditions were altered).
 Avoid listing file names unless essential.
-Do not add explanations, summaries, or unnecessary context. Output only the commit message.
+Do add explanations, or summaries. Output only the commit message.
 
 Here are the code changes:
 {request.diff}

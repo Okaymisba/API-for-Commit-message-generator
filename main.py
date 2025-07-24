@@ -21,7 +21,7 @@ Analyze the following code changes (git diff) and generate a concise, clear, and
 Use the Conventional Commits format only if appropriate (fix, docs, refactor, chore, etc.). Avoid using feat unless the change introduces a meaningful, user-facing feature.
 Include specific details about what was changed (e.g., what functions were modified, what logic was updated, which conditions were altered).
 Avoid listing file names unless essential.
-Write it briefly. Output only the commit message.
+Please write it briefly. Output only the commit message.
 
 Here are the code changes:
 {request.diff}

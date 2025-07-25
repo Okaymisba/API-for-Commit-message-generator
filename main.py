@@ -3,16 +3,13 @@ from pydantic import BaseModel
 from google import genai
 import os
 
-# Define FastAPI app
 app = FastAPI()
 
 
-# Define request model
 class DiffRequest(BaseModel):
     diff: str
 
 
-# Define API endpoint
 @app.post("/generate-commit")
 async def generate_commit(request: DiffRequest):
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))

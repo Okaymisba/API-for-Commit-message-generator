@@ -43,4 +43,4 @@ COPY --from=builder /envhub-src/dist/envhub /usr/local/bin/envhub
 RUN chmod +x /usr/local/bin/envhub
 
 # Step 4: Command to run
-CMD ["envhub", "decrypt", "--", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["envhub", "decrypt-prod", "--", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

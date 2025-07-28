@@ -33,13 +33,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Step 2: Copy your FastAPI project files
-COPY main.py .              
-COPY .env .                 
+COPY . .          
 
-# Step 3: Copy built envhub binary and its code
+# Step 3: Copy built envhub binary and make it executable
 COPY --from=builder /envhub-src/dist/envhub /usr/local/bin/envhub
-
-# Make the envhub binary executable
 RUN chmod +x /usr/local/bin/envhub
 
 # Step 4: Command to run

@@ -19,7 +19,7 @@ async def generate_commit(request: DiffRequest):
 
     configure(api_key=api_key)
 
-    model = GenerativeModel("gemini-1.5-flash")  # Or "gemini-1.5-pro" if needed
+    model = GenerativeModel("gemini-2.5-flash")  # Or "gemini-1.5-pro" if needed
 
     prompt = f"""Act as a professional Git commit message generator.
 Analyze the following code changes (git diff) and generate a concise, clear, and accurate commit message.
